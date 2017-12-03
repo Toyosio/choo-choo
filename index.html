@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!--Meta tag-->
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Train Schedule</title>
+    <!--CSS Links-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="reset/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">CHOO-CHOO STATION SCHEDULE </h1>
+    </div>
+  </div>
+<br />
+<div>
+  <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Train Name</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Frequency</th>
+      <th scope="col">Next Arrival</th>
+      <th scope="col">Minutes Away</th>
+    </tr>
+  </thead>
+  <tbody id="currentSchedule">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br />
+<div class="pannel pannel-dark">
+    <div class="panel-heading">Add A Train</div>
+    <p class="lead">USE THIS SECTION TO ADD A TRAIN TO THE SCHEDULE</p>
+  </div>
+</div>
+
+<form class="form form-dark">
+  <div class="form-group">
+    <label for="enterName">Train Name</label>
+    <input type="name" class="form-control" id="name" placeholder="Enter Name">
+  </div>
+  <div class="form-group">
+    <label for="enterName">Destination</label>
+    <input type="name" class="form-control" id="name" placeholder="Enter Destination">
+  </div>
+  <div class="form-group">
+    <label for="enterName">First Train Time (HH:mm)</label>
+    <input type="name" class="form-control" id="name" placeholder="Enter Next Arrival">
+  </div>
+  <div class="form-group">
+    <label for="enterName">Frequency (min)</label>
+    <input type="name" class="form-control" id="name" placeholder="Enter Frequency">
+  </div>
+  <button type="submit" class="btn btn-dark" id="newTrain">Submit</button>
+</form>
+</div>
+</div>
+  </body>
+</html>
