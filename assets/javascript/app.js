@@ -52,7 +52,7 @@ database.ref().on("child_added", function(snapShot) {
   var showFirstTrainArrival = snapShot.val().firstTrain;
   var showFrequency = snapShot.val().frequency;
 
-console.log(snapshot.val());
+console.log(snapshot);
   //convert moment
 var firstTimeArrivalConverted = moment(firstTrainArrival, "HH:mm").subtract(1, "years");
 
