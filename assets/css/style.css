@@ -1,22 +1,9 @@
-document {
+div.jumbotron {
 	background-image: url('http://thewallpaper.co/wp-content/uploads/2016/03/train-station-wide-hd-wallpaper-download-train-station-photos-free-download-wallpapers-wallpaper-of-iphone-samsung-backgrounds-768x480.jpg');
-	background-size: cover;
-	height: 300px;
+	color: rgb(249, 241, 244);
 }
-#social {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border: #CCCC99;
-}
-#copyrite {
-    text-align: center;
-    color: #793b24;;
-		font-size: 13px;
-}
-#connect {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	border: none !important;
+
+h1 {
+	color: rgb(249, 241, 244);
+	align-self: center;
 }

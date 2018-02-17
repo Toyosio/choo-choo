@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDS3SQajmFixlG0W1kBSFS_d_btbwnpYsk",
@@ -16,10 +18,12 @@
   var firstTrainArrival = 0;
   var nextTrainArrival = 0;
   var minsAway = 0;
+  var now = moment();
 
 //initialize submit button
-$("#newTrain").on("click",  function(event) {
+$("#nuevoTrain").on("click",  function(event) {
   event.preventDefault();
+
 //newTrain input
   trainName = $("#name").val().trim();
   trainDestination = $("#dest").val().trim();
@@ -32,7 +36,7 @@ $("#newTrain").on("click",  function(event) {
     destination: trainDestination,
     firstTrain: firstTrainArrival,
     frequency: trainFrequency
-  }
+  };
 
 //loads info to firebase
 database.ref().push(newTrain);
@@ -44,6 +48,7 @@ name = $("#name").val("");
 trainDestination = $("#dest").val("");
 firstTrainArrival = $("#tyme").val("");
 trainFrequency = $("#frequent").val("");
+
 });
 
 database.ref().on("child_added", function(snapShot) {
@@ -52,7 +57,7 @@ database.ref().on("child_added", function(snapShot) {
   var showFirstTrainArrival = snapShot.val().firstTrain;
   var showFrequency = snapShot.val().frequency;
 
-console.log(snapshot);
+
   //convert moment
 var firstTimeArrivalConverted = moment(firstTrainArrival, "HH:mm").subtract(1, "years");
 
@@ -63,12 +68,15 @@ var diffTime = moment().diff(moment(firstTimeArrivalConverted), "minutes");
 
 var tReminder = diffTime % showFrequency;
 
-var ShowminsAway = showFrequency - tReminder;
+var showMinsAway = showFrequency - tReminder;
 
-var nextTrainArrival = moment().add(ShowminsAway, "minutes");
+var nextTrainArrival = moment().add(showMinsAway, "minutes");
 
 var nextTrainArrivalConverted = moment(nextTrainArrival).format("HH:mm");
 
-$("#currentSchedule").append("<tr><td>" + showTrainName + "</td><td>" + showDestination + "</td><td>" + showFrequency + "</td><td>" + showNextTrainArrival + "</td><td>" + Showmins + "</td></tr>");
+$("#currentSchedule").append("<tr><td>" + showTrainName + "</td><td>" + showDestination + "</td><td>" + showFrequency + "</td><td>" + nextTrainArrivalConverted + "</td><td>" + showMinsAway + "</td></tr>");
 
 });
+
+});
+//console.log(snapshot);
